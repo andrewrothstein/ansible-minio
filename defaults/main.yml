@@ -1,0 +1,12 @@
+---
+minio_channel: RELEASE
+minio_timestamp: '2017-10-27T18-59-02Z'
+minio_mirror: https://dl.minio.io/server/minio/release
+minio_platform: linux-amd64
+minio_install_dir: /usr/local/bin
+
+minio_checksums:
+  '2017-10-27T18-59-02Z':
+    # https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2017-10-27T18-59-02Z.sha256sum
+    linux-amd64: sha256:7e385f1ed599218c69d3a532b4351a3f8624fa0bc511b9f4083b3becc480e9d3
+      

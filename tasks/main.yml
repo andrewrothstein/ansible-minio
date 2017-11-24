@@ -1,0 +1,16 @@
+---
+- name: download and install minio
+  become: yes
+  become_user: root
+  get_url:
+    url: '{{minio_exe_url}}'
+    dest: '{{minio_install_target}}'
+    mode: 0755
+    checksum: '{{minio_checksum}}'
+- name: link...
+  become: yes
+  become_user: root
+  file:
+    src: '{{minio_install_target}}'
+    dest: '{{minio_link_target}}'
+    state: link
