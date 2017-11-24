@@ -1,16 +1,18 @@
 ---
-- name: download and install minio
+- name: download and install
   become: yes
   become_user: root
+  with_items: '{{minio_apps}}'
   get_url:
-    url: '{{minio_exe_url}}'
-    dest: '{{minio_install_target}}'
+    url: '{{minio_mirror}}/{{item.subpath}}/{{item.name}}/release/{{minio_platform}}{% if item.archive %}/archive{% endif %}/{{item.name}}.{{item.channel}}.{{item.timestamp}}'
+    dest: '{{minio_install_dir}}/{{item.name}}.{{item.channel}}.{{item.timestamp}}'
     mode: 0755
-    checksum: '{{minio_checksum}}'
+    checksum: '{{item.checksums[item.timestamp][minio_platform]}}'
 - name: link...
   become: yes
   become_user: root
+  with_items: '{{minio_apps}}'
   file:
-    src: '{{minio_install_target}}'
-    dest: '{{minio_link_target}}'
+    src: '{{minio_install_dir}}/{{item.name}}.{{item.channel}}.{{item.timestamp}}'
+    dest: '{{minio_install_dir}}/{{item.name}}'
     state: link

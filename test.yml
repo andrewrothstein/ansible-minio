@@ -3,5 +3,6 @@
   roles:
     - role: '{{playbook_dir}}'
   tasks:
-    - name: is minio executable
-      command: /usr/local/bin/minio -h
+    - name: are executables executable
+      command: '{{item.name}} -h'
+      with_items: '{{minio_apps}}'

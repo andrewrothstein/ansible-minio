@@ -1,8 +1,2 @@
 ---
 # vars file for minio
-minio_ver: '{{minio_channel}}.{{minio_timestamp}}'
-minio_exe: minio.{{minio_ver}}
-minio_checksum: '{{minio_checksums[minio_timestamp][minio_platform]}}'
-minio_exe_url: '{{minio_mirror}}/{{minio_platform}}/archive/{{minio_exe}}'
-minio_install_target: '{{minio_install_dir}}/{{minio_exe}}'
-minio_link_target: '{{minio_install_dir}}/minio'
