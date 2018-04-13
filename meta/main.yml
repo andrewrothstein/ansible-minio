@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: '@TODO name this role'
+  description: installs Minio server and/or client
   company: BlueMountain Capital
   license:
     - MIT
