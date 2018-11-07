@@ -1,11 +1,7 @@
 #!/usr/bin/env sh
-VER=v3.3.10
 DIR=~/Downloads
 
 MIRROR=https://dl.minio.io
-
-
-FILE_PREFIX=etcd-$VER
 
 dl()
 {
@@ -19,8 +15,8 @@ dl()
     curl -L $URL
 }
 
-SERVER_TS=2018-10-25T01-27-03Z
-CLIENT_TS=2018-10-18T00-40-05Z
+SERVER_TS=2018-11-06T01-01-02Z
+CLIENT_TS=2018-11-06T01-12-20Z
 
 for platform in linux-amd64
 do

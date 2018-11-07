@@ -7,7 +7,7 @@ minio_mirror: https://dl.minio.io
 minio_apps:
   - channel: RELEASE
     archive: False
-    timestamp: '2018-10-25T01-27-03Z'
+    timestamp: '2018-11-06T01-01-02Z'
     subpath: server
     name: minio
     # https://dl.minio.io/server/minio/release/linux-amd64/
@@ -27,9 +27,12 @@ minio_apps:
       '2017-11-22T19-55-46Z':
         # https://dl.minio.io/server/minio/release/linux-amd64/minio.RELEASE.2017-11-22T19-55-46Z.sha256sum
         linux-amd64: sha256:3854dcc55a5fd2d1bee8bef6636f424c3aa94e456723d1a2c9ca23d00834725d
+      '2018-11-06T01-01-02Z':
+        # https://dl.minio.io/server/minio/release/linux-amd64/minio.RELEASE.2018-11-06T01-01-02Z.sha256sum
+        linux-amd64: sha256:9dbc4863f4cdc155502f04fb2b9b0ef9f6bad5fe885a4fcdc30676c66e924e87
   - channel: RELEASE
     archive: False
-    timestamp: '2018-10-18T00-40-05Z'
+    timestamp: '2018-11-06T01-12-20Z'
     subpath: client
     name: mc
     # https://dl.minio.io/client/mc/release/linux-amd64/
@@ -49,3 +52,6 @@ minio_apps:
       '2017-10-14T00-51-16Z':
         # https://dl.minio.io/client/mc/release/linux-amd64/mc.RELEASE.2017-10-14T00-51-16Z.sha256sum
         linux-amd64: sha256:eb3edd18b5e8cf9b91d02aaf269b850a53800e2828d821a2cfdfc6ee1c14c379
+      '2018-11-06T01-12-20Z':
+        # https://dl.minio.io/client/mc/release/linux-amd64/mc.RELEASE.2018-11-06T01-12-20Z.sha256sum
+        linux-amd64: sha256:c76f9c8ca3a5f9acdf7e5e99d9ca1f5f56e0dc0aa92eabaa052947ffd5c3ae93
