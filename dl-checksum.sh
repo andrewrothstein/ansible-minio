@@ -15,13 +15,16 @@ dl()
     curl -L $URL
 }
 
-SERVER_TS=2018-12-06T01-27-43Z
-CLIENT_TS=2018-12-05T22-59-07Z
-
-for platform in linux-amd64
+SERVER_TS=2019-03-20T22-38-47Z
+for platform in darwin-amd64 linux-amd64 windows-amd64
 do
-    dl server minio linux-amd64 $SERVER_TS
-    dl client mc linux-amd64 $CLIENT_TS
+    dl server minio $platform $SERVER_TS
+done
+
+CLIENT_TS=2019-03-20T21-29-03Z
+for platform in darwin-amd64 linux-amd64 windows-amd64
+do
+    dl client mc $platform $CLIENT_TS
 done
 
 
