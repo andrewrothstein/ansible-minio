@@ -26,6 +26,7 @@ galaxy_info:
       versions:
         - jessie
         - stretch
+  role_name: minio
   galaxy_tags:
     - development
 
