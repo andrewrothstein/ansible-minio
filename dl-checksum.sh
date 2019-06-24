@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
-DIR=~/Downloads
 
 MIRROR=https://dl.minio.io
+
+SERVER_TS=2019-06-19T18-24-42Z
+CLIENT_TS=2019-06-19T22-39-53Z
 
 dl()
 {
@@ -16,14 +18,12 @@ dl()
 }
 
 
-SERVER_TS=2019-05-23T00-29-34Z
 printf "'$SERVER_TS':\n"
 for platform in darwin-amd64 linux-amd64 windows-amd64
 do
     dl server minio $platform $SERVER_TS
 done
 
-CLIENT_TS=2019-05-23T01-33-27Z
 printf "'$CLIENT_TS':\n"
 for platform in darwin-amd64 linux-amd64 windows-amd64
 do
