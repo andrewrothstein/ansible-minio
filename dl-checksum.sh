@@ -3,7 +3,7 @@
 MIRROR=https://dl.minio.io
 
 SERVER_TS=2019-06-27T21-13-50Z
-CLIENT_TS=2019-06-27T21-31-45Z
+CLIENT_TS=2019-07-03T18-14-53Z
 
 dl()
 {
@@ -13,12 +13,12 @@ dl()
     TS=$4
     FILE=$APPNAME.RELEASE.$TS.sha256sum
     URL=$MIRROR/$APPDOM/$APPNAME/release/$PLATFORM/$FILE
-    printf "      # %s\n" $URL
-    printf "      %s: sha256:%s\n" $PLATFORM `curl -sSL $URL | awk '{print $1}'`
+    printf "        # %s\n" $URL
+    printf "        %s: sha256:%s\n" $PLATFORM `curl -sSL $URL | awk '{print $1}'`
 }
 
 
-printf "    '$SERVER_TS':\n"
+printf "      '$SERVER_TS':\n"
 for platform in darwin-amd64 linux-amd64 windows-amd64
 do
     dl server minio $platform $SERVER_TS
