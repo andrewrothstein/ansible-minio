@@ -7,11 +7,18 @@ minio_mirror: https://dl.minio.io
 minio_apps:
   - channel: RELEASE
     archive: False
-    timestamp: '2019-06-27T21-13-50Z'
+    timestamp: '2019-07-05T21-20-21Z'
     subpath: server
     name: minio
     # https://dl.minio.io/server/minio/release/linux-amd64/
     checksums:
+      '2019-07-05T21-20-21Z':
+        # https://dl.minio.io/server/minio/release/darwin-amd64/minio.RELEASE.2019-07-05T21-20-21Z.sha256sum
+        darwin-amd64: sha256:7c03367b14b85f169268dd48cbd372a85a1b90b31178567bca9de0cfbeca220f
+        # https://dl.minio.io/server/minio/release/linux-amd64/minio.RELEASE.2019-07-05T21-20-21Z.sha256sum
+        linux-amd64: sha256:42eed36ac28691d20b35cf1600225213e78df64f18107e30bd647b7c9b566b4a
+        # https://dl.minio.io/server/minio/release/windows-amd64/minio.RELEASE.2019-07-05T21-20-21Z.sha256sum
+        windows-amd64: sha256:8c07e3e913b231a02eb7a7114df326c0bc571176b09ca2f2e799ee42867eabdc
       '2019-06-27T21-13-50Z':
         # https://dl.minio.io/server/minio/release/darwin-amd64/minio.RELEASE.2019-06-27T21-13-50Z.sha256sum
         darwin-amd64: sha256:47f121a63dca3b33ae21e09cfb490c80e512e22e34a2038b627519a62bf9cb0e
