@@ -2,8 +2,11 @@
 
 MIRROR=https://dl.minio.io
 
-SERVER_TS=2019-07-17T22-54-12Z
-CLIENT_TS=2019-07-17T22-13-42Z
+# https://dl.minio.io/server/minio/release/linux-amd64/
+SERVER_TS=2019-08-07T01-59-21Z
+
+# https://dl.minio.io/client/mc/release/linux-amd64
+CLIENT_TS=2019-08-07T23-14-43Z
 
 dl()
 {
@@ -18,13 +21,13 @@ dl()
 }
 
 
-printf "      '$SERVER_TS':\n"
+printf "      '%s':\n" $SERVER_TS
 for platform in darwin-amd64 linux-amd64 windows-amd64
 do
     dl server minio $platform $SERVER_TS
 done
 
-printf "    '$CLIENT_TS':\n"
+printf "      '%s':\n" $CLIENT_TS
 for platform in darwin-amd64 linux-amd64 windows-amd64
 do
     dl client mc $platform $CLIENT_TS

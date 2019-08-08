@@ -7,11 +7,18 @@ minio_mirror: https://dl.minio.io
 minio_apps:
   - channel: RELEASE
     archive: False
-    timestamp: '2019-07-17T22-54-12Z'
+    timestamp: '2019-08-07T01-59-21Z'
     subpath: server
     name: minio
     # https://dl.minio.io/server/minio/release/linux-amd64/
     checksums:
+      '2019-08-07T01-59-21Z':
+        # https://dl.minio.io/server/minio/release/darwin-amd64/minio.RELEASE.2019-08-07T01-59-21Z.sha256sum
+        darwin-amd64: sha256:19a82de3ebfa4013df03eee6bb49605360e66e2081c3c61d50c9421af4018ff1
+        # https://dl.minio.io/server/minio/release/linux-amd64/minio.RELEASE.2019-08-07T01-59-21Z.sha256sum
+        linux-amd64: sha256:91e6dffc6f058a2739f7c870545cd92aaa6bcf1b008be8861fd7fd0e265d3e4f
+        # https://dl.minio.io/server/minio/release/windows-amd64/minio.RELEASE.2019-08-07T01-59-21Z.sha256sum
+        windows-amd64: sha256:8ea5f0f40858d1a17ec2b89799929bcb5f837ae16f060f0050ba118f0fcbe02e
       '2019-07-17T22-54-12Z':
         # https://dl.minio.io/server/minio/release/darwin-amd64/minio.RELEASE.2019-07-17T22-54-12Z.sha256sum
         darwin-amd64: sha256:b5ef7785cb5d157bee993be73e57fbfe897407f188230836d6dc8378f3a688a5
@@ -83,11 +90,18 @@ minio_apps:
         windows-amd64: sha256:51b7c0cbbe00037f8da013b09e835648722e298b9bf9c56ab20a6dd9ea72acdf
   - channel: RELEASE
     archive: False
-    timestamp: '2019-07-17T22-13-42Z'
+    timestamp: '2019-08-07T23-14-43Z'
     subpath: client
     name: mc
     # https://dl.minio.io/client/mc/release/linux-amd64/
     checksums:
+      '2019-08-07T23-14-43Z':
+        # https://dl.minio.io/client/mc/release/darwin-amd64/mc.RELEASE.2019-08-07T23-14-43Z.sha256sum
+        darwin-amd64: sha256:a63294a2e2f58f5993bd23339625f727790668c2bc9ea351ff01a23a8d45d94f
+        # https://dl.minio.io/client/mc/release/linux-amd64/mc.RELEASE.2019-08-07T23-14-43Z.sha256sum
+        linux-amd64: sha256:3ec22148ab1206044f7b9331953d4adf3e39c87d2fdb034b12f0f5644bd34bdf
+        # https://dl.minio.io/client/mc/release/windows-amd64/mc.RELEASE.2019-08-07T23-14-43Z.sha256sum
+        windows-amd64: sha256:c1d6c8ecc148c9b6831c80ab2954a57862732429b7cb791f7f88c262870def11
       '2019-07-17T22-13-42Z':
         # https://dl.minio.io/client/mc/release/darwin-amd64/mc.RELEASE.2019-07-17T22-13-42Z.sha256sum
         darwin-amd64: sha256:f82237c47315aaa282607f9685c6dab5d3d1e9749af96722700b38a5f0cf66b7
