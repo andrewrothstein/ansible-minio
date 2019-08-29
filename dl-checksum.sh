@@ -3,10 +3,10 @@
 MIRROR=https://dl.minio.io
 
 # https://dl.minio.io/server/minio/release/linux-amd64/
-SERVER_TS=2019-08-14T20-37-41Z
+SERVER_TS=2019-08-29T00-25-01Z
 
 # https://dl.minio.io/client/mc/release/linux-amd64
-CLIENT_TS=2019-08-14T20-49-49Z
+CLIENT_TS=2019-08-29T00-40-57Z
 
 dl()
 {
