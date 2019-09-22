@@ -3,21 +3,21 @@
 MIRROR=https://dl.minio.io
 
 # https://dl.minio.io/server/minio/release/linux-amd64/
-SERVER_TS=2019-08-29T00-25-01Z
+SERVER_TS=2019-09-18T21-55-05Z
 
 # https://dl.minio.io/client/mc/release/linux-amd64
-CLIENT_TS=2019-08-29T00-40-57Z
+CLIENT_TS=2019-09-20T00-09-55Z
 
 dl()
 {
-    APPDOM=$1
-    APPNAME=$2
-    PLATFORM=$3
-    TS=$4
-    FILE=$APPNAME.RELEASE.$TS.sha256sum
-    URL=$MIRROR/$APPDOM/$APPNAME/release/$PLATFORM/$FILE
-    printf "        # %s\n" $URL
-    printf "        %s: sha256:%s\n" $PLATFORM `curl -sSL $URL | awk '{print $1}'`
+    local appdom=$1
+    local appname=$2
+    local arch=$3
+    local ts=$4
+    local file=$appname.RELEASE.$ts.sha256sum
+    local url=$MIRROR/$appdom/$appname/release/$arch/$file
+    printf "        # %s\n" $url
+    printf "        %s: sha256:%s\n" $arch `curl -sSL $url | awk '{print $1}'`
 }
 
 
