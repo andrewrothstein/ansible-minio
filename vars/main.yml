@@ -1,2 +1,3 @@
 ---
 # vars file for minio
+minio_platform: '{{ minio_os }}-{{ minio_arch }}'
