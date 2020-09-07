@@ -8,7 +8,7 @@ minio_mirror: https://dl.minio.io
 minio_apps:
   - channel: RELEASE
     archive: False
-    timestamp: '2020-02-07T23-28-16Z'
+    timestamp: '2020-09-05T07-14-49Z'
     subpath: server
     name: minio
     # https://dl.minio.io/server/minio/release/linux-amd64/
@@ -124,9 +124,16 @@ minio_apps:
         linux-amd64: sha256:40f7ad9396fa377a6573859786e54c732b1080e4d93aee54e617c7441e449d2e
         # https://dl.minio.io/server/minio/release/windows-amd64/minio.RELEASE.2019-03-20T22-38-47Z.sha256sum
         windows-amd64: sha256:51b7c0cbbe00037f8da013b09e835648722e298b9bf9c56ab20a6dd9ea72acdf
+      '2020-09-05T07-14-49Z':
+        # https://dl.minio.io/server/minio/release/darwin-amd64/minio.RELEASE.2020-09-05T07-14-49Z.sha256sum
+        darwin-amd64: sha256:dc9389ecfe1183aed45231ba6ebedb6a37340849a24c493fb5d233967e826a03
+        # https://dl.minio.io/server/minio/release/linux-amd64/minio.RELEASE.2020-09-05T07-14-49Z.sha256sum
+        linux-amd64: sha256:3beb326a6a998f620eb955ba6fd9ef1d379f850cad4ddcbfea332422538b7488
+        # https://dl.minio.io/server/minio/release/windows-amd64/minio.RELEASE.2020-09-05T07-14-49Z.sha256sum
+        windows-amd64: sha256:d2fd799a8a1a2ff9610d84c7dd64c7a2f6bb1686deaf9f748e95fb47787289ad
   - channel: RELEASE
     archive: False
-    timestamp: '2020-02-14T19-35-50Z'
+    timestamp: '2020-09-03T00-08-28Z'
     subpath: client
     name: mc
     # https://dl.minio.io/client/mc/release/linux-amd64/
@@ -235,3 +242,10 @@ minio_apps:
         linux-amd64: sha256:6e50d19a80bdba81fd93ff940eb86399d567553563232344c4888b0f75b126c1
         # https://dl.minio.io/client/mc/release/windows-amd64/mc.RELEASE.2019-03-20T21-29-03Z.sha256sum
         windows-amd64: sha256:871336bb0e7e07396ea4f47c48320e122f76735789e103a142488e638a8d8f4b
+      '2020-09-03T00-08-28Z':
+        # https://dl.minio.io/client/mc/release/darwin-amd64/mc.RELEASE.2020-09-03T00-08-28Z.sha256sum
+        darwin-amd64: sha256:3d560e02ea09bd2a96f6305a34d6ce1eb2ee1848906a62b4b1d2eacd991e99b7
+        # https://dl.minio.io/client/mc/release/linux-amd64/mc.RELEASE.2020-09-03T00-08-28Z.sha256sum
+        linux-amd64: sha256:7418e5e111c55a3c6f0715b555a952ee47efd8a70fffadf0cd99f66ef1b195f7
+        # https://dl.minio.io/client/mc/release/windows-amd64/mc.RELEASE.2020-09-03T00-08-28Z.sha256sum
+        windows-amd64: sha256:0252a16fcb36052d76527141752a85910d39e6e4550e03ed350c63c5ff870da8
