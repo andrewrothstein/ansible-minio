@@ -1,0 +1,6 @@
+---
+minio_app_name: '{{ minio_app.name }}.{{ minio_app.channel }}.{{ minio_app.timestamp }}'
+minio_app_url: '{{ minio_mirror }}/{{ minio_app.subpath }}/{{ minio_app.name }}/release/{{ minio_platform }}{% if minio_app.archive %}/archive{% endif %}/{{ minio_app_name }}'
+minio_app_exe: '{{ minio_install_dir }}/{{ minio_app_name }}'
+minio_app_link: '{{ minio_install_dir }}/{{ minio_app.name }}'
+minio_app_checksum: '{{ minio_app.checksums[minio_app.timestamp][minio_platform] }}'

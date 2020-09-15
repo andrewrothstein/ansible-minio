@@ -1,0 +1,19 @@
+---
+- name: resolving vars for {{ minio_app.name }}...
+  include_vars:
+    file: app-vars.yml
+- name: installing {{ minio_app_name }}...
+  become: yes
+  become_user: root
+  get_url:
+    url: '{{ minio_app_url }}'
+    dest: '{{ minio_app_exe }}'
+    mode: 0755
+    checksum: '{{ minio_app_checksum }}'
+- name: linking {{ minio_app_exe }} to {{ minio_app_link }}...
+  become: yes
+  become_user: root
+  file:
+    src: '{{ minio_app_exe }}'
+    dest: '{{ minio_app_link }}'
+    state: link

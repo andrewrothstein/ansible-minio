@@ -1,0 +1,45 @@
+---
+- name: create minio group ({{ minio_group }}
+  become: yes
+  become_user: root
+  group:
+    name: '{{ minio_group }}'
+    state: present
+- name: create minio user ({{ minio_user }})
+  become: yes
+  become_user: root
+  user:
+    name: '{{ minio_user }}'
+    group: '{{ minio_group }}'
+    state: present
+- name: ensure config and volume directories exist
+  become: yes
+  become_user: root
+  with_items:
+    - '{{ minio_config_dir }}'
+    - '{{ minio_config.volumes }}'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: '{{ minio_user }}'
+    group: '{{ minio_group }}'
+    mode: 0755
+- name: templatize {{ minio_config_file }}...
+  become: yes
+  become_user: root
+  template:
+    src: minio.j2
+    dest: '{{ minio_config_file }}'
+    owner: '{{ minio_user }}'
+    group: '{{ minio_group }}'
+    mode: 0600
+  register: minio_config_changed
+- include_tasks: '{{ minio_init | default("systemd") }}.yml'
+- name: (re)start minio service
+  become: yes
+  become_user: root
+  when: minio_activate
+  service:
+    name: minio
+    state: '{{ "restarted" if minio_config_changed.changed else "started" }}'
+    enabled: yes

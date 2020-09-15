@@ -1,18 +1,8 @@
 ---
 - name: download and install
-  become: yes
-  become_user: root
-  with_items: '{{ minio_apps }}'
-  get_url:
-    url: '{{ minio_mirror }}/{{ item.subpath }}/{{ item.name }}/release/{{ minio_platform }}{% if item.archive %}/archive{% endif %}/{{ item.name }}.{{ item.channel }}.{{ item.timestamp }}'
-    dest: '{{ minio_install_dir }}/{{ item.name }}.{{ item.channel }}.{{ item.timestamp }}'
-    mode: 0755
-    checksum: '{{ item.checksums[item.timestamp][minio_platform] }}'
-- name: link...
-  become: yes
-  become_user: root
-  with_items: '{{ minio_apps }}'
-  file:
-    src: '{{ minio_install_dir }}/{{ item.name }}.{{ item.channel }}.{{ item.timestamp }}'
-    dest: '{{ minio_install_dir }}/{{ item.name }}'
-    state: link
+  loop: '{{ minio_apps }}'
+  loop_control:
+    loop_var: minio_app
+  include_tasks: install-program.yml
+- when: minio_config is defined and minio_config.enable
+  include_tasks: configure.yml

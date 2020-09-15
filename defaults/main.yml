@@ -5,10 +5,13 @@ minio_install_dir: /usr/local/bin
 
 minio_mirror: https://dl.minio.io
 
+# see test.yml for configuration and launching
+minio_activate: True
+
 minio_apps:
   - channel: RELEASE
     archive: False
-    timestamp: '2020-09-05T07-14-49Z'
+    timestamp: '2020-09-10T22-02-45Z'
     subpath: server
     name: minio
     # https://dl.minio.io/server/minio/release/linux-amd64/
@@ -131,6 +134,13 @@ minio_apps:
         linux-amd64: sha256:3beb326a6a998f620eb955ba6fd9ef1d379f850cad4ddcbfea332422538b7488
         # https://dl.minio.io/server/minio/release/windows-amd64/minio.RELEASE.2020-09-05T07-14-49Z.sha256sum
         windows-amd64: sha256:d2fd799a8a1a2ff9610d84c7dd64c7a2f6bb1686deaf9f748e95fb47787289ad
+      '2020-09-10T22-02-45Z':
+        # https://dl.minio.io/server/minio/release/darwin-amd64/minio.RELEASE.2020-09-10T22-02-45Z.sha256sum
+        darwin-amd64: sha256:4d3160fa780666250a6f52f58d512ef2ac8aab00a25e3d0eb4aae71abdaf73e3
+        # https://dl.minio.io/server/minio/release/linux-amd64/minio.RELEASE.2020-09-10T22-02-45Z.sha256sum
+        linux-amd64: sha256:3a41a1e918a6cb43565aa4ebbb71cfe0a0da1e199a3f727f4a11a4c73a6026b1
+        # https://dl.minio.io/server/minio/release/windows-amd64/minio.RELEASE.2020-09-10T22-02-45Z.sha256sum
+        windows-amd64: sha256:b4f386fd7582a297b7af22544faebb5d5bc5856fd8f7065692cfeb19dd4b1f04
   - channel: RELEASE
     archive: False
     timestamp: '2020-09-03T00-08-28Z'
