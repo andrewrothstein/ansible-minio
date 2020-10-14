@@ -6,3 +6,11 @@ minio_config_dir: '{{ minio_config.config_dir if "config_dir" in minio_config el
 minio_config_file: '{{ minio_config_dir }}/minio'
 minio_user: '{{ minio_config.user if "user" in minio_config else "minio-user" }}'
 minio_group: '{{ minio_config.group if "user" in minio_config else "minio-group" }}'
+
+minio_apps:
+  - ver: '{{ minio_ver }}'
+    subpath: server
+    name: minio
+  - ver: '{{ minio_mc_ver }}'
+    subpath: client
+    name: mc

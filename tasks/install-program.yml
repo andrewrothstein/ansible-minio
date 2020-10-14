@@ -2,7 +2,7 @@
 - name: resolving vars for {{ minio_app.name }}...
   include_vars:
     file: app-vars.yml
-- name: installing {{ minio_app_name }}...
+- name: downloading {{ minio_app_name }} from {{ minio_app_url }} to {{ minio_app_exe }}
   become: yes
   become_user: root
   get_url:
