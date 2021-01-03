@@ -48,7 +48,6 @@
         tls_dest_chmod:
           owner: '{{ minio_user }}'
           grp: '{{ minio_group }}'
-      notify: minio_restart
 - name: templatize {{ minio_config_file }}...
   become: yes
   become_user: root
