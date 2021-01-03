@@ -1,0 +1,21 @@
+---
+- hosts: all
+  vars:
+    minio_activate: False
+    minio_tls:
+      enable: True
+      pki_dir: '{{ playbook_dir }}/test-pki'
+    minio_config:
+      enable: True
+      server_access_key: minioServerAccessKey
+      server_secret_key: minioServerSecretKey
+      user: minio-test-user
+      group: minio-test-group
+      working_dir: /usr/local/
+      config_file: /etc/default/minio
+      volumes:
+        - /data/disk1
+        - /data/disk2
+        - /data/disk3
+  roles:
+    - role: '{{ playbook_dir }}'

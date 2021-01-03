@@ -1,0 +1,10 @@
+---
+- hosts: all
+  vars:
+    minio_activate: False
+  roles:
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - name: are executables executable
+      command: '{{ item.name }} --version'
+      with_items: '{{ minio_apps }}'
