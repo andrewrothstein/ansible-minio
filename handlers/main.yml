@@ -6,3 +6,10 @@
   when: minio_activate
   systemd:
     daemon_reload: yes
+- name: minio_restart
+  become: yes
+  become_user: root
+  when: minio_activate
+  service:
+    name: minio
+    state: restarted

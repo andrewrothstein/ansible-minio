@@ -24,6 +24,31 @@
     owner: '{{ minio_user }}'
     group: '{{ minio_group }}'
     mode: 0755
+- when: minio_tls.enable
+  block:
+    - name: mkdir -p {{ minio_tls_dir }}
+      become: yes
+      become_user: root
+      file:
+        path: '{{ minio_tls_dir }}'
+        state: directory
+        mode: 0755
+    - name: install keys/certs
+      include_role:
+        name: andrewrothstein.tls
+      vars:
+        tls_become: yes
+        tls_become_user: root
+        tls_src: '{{ minio_tls.pki_dir }}'
+        tls_dest: '{{ minio_tls_dir }}'
+        tls_dest_file_names:
+          ca: ca.pem
+          cert: public.crt
+          key: private.key
+        tls_dest_chmod:
+          owner: '{{ minio_user }}'
+          grp: '{{ minio_group }}'
+      notify: minio_restart
 - name: templatize {{ minio_config_file }}...
   become: yes
   become_user: root
@@ -33,13 +58,14 @@
     owner: '{{ minio_user }}'
     group: '{{ minio_group }}'
     mode: 0600
-  register: minio_config_changed
+  notify:
+    - minio_restart
 - include_tasks: '{{ minio_init | default("systemd") }}.yml'
-- name: (re)start minio service
+- name: start minio service
   become: yes
   become_user: root
   when: minio_activate
   service:
     name: minio
-    state: '{{ "restarted" if minio_config_changed.changed else "started" }}'
+    state: started
     enabled: yes

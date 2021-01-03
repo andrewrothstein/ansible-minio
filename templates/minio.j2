@@ -1,7 +1,7 @@
 # Volume to be used for MinIO server.
 MINIO_VOLUMES="{{ minio_config.volumes | join(' ') }}"
 # Use if you want to run MinIO on a custom port.
-MINIO_OPTS="{{ minio_config.opts if 'opts' in minio_config else '' }}"
+MINIO_OPTS="{{ minio_config.opts if 'opts' in minio_config else '' }}{% if minio_tls.enable %} --certs-dir {{ minio_tls_dir }}{% endif %}"
 # Access Key of the server.
 MINIO_ACCESS_KEY={{ minio_config.server_access_key }}
 # Secret key of the server.

@@ -2,7 +2,6 @@
 minio_os: linux
 minio_arch: amd64
 minio_install_dir: /usr/local/bin
-
 minio_mirror: https://dl.minio.io
 
 # see test.yml for configuration and launching
@@ -10,3 +9,8 @@ minio_activate: True
 
 minio_ver: RELEASE.2020-11-12T22-33-34Z
 minio_mc_ver: RELEASE.2020-10-03T02-54-56Z
+
+minio_tls_dir: /etc/minio/certs
+minio_tls:
+  enable: False
+  # pki_dir: ~/secrets
