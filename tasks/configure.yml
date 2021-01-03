@@ -45,7 +45,7 @@
           ca: ca.pem
           cert: public.crt
           key: private.key
-        tls_dest_chmod:
+        tls_dest_chown:
           owner: '{{ minio_user }}'
           grp: '{{ minio_group }}'
 - name: templatize {{ minio_config_file }}...
