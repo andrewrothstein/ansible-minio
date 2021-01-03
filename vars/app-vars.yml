@@ -4,4 +4,3 @@ minio_app_url: '{{ minio_mirror }}/{{ minio_app.subpath }}/{{ minio_app.name }}/
 minio_app_exe: '{{ minio_install_dir }}/{{ minio_app_name }}'
 minio_app_link: '{{ minio_install_dir }}/{{ minio_app.name }}'
 minio_app_checksum: 'sha256:{{ minio_app_url }}.sha256sum'
-
