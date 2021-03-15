@@ -7,8 +7,11 @@ minio_mirror: https://dl.minio.io
 # see test.yml for configuration and launching
 minio_activate: True
 
-minio_ver: RELEASE.2020-12-29T23-29-29Z
-minio_mc_ver: RELEASE.2020-12-18T10-53-53Z
+# https://dl.min.io/server/minio/release/linux-amd64/
+minio_ver: RELEASE.2021-03-12T00-00-47Z
+
+# https://dl.min.io/client/mc/release/linux-amd64/
+minio_mc_ver: RELEASE.2021-03-12T03-36-59Z
 
 minio_tls_dir: /etc/minio/certs
 minio_tls:
