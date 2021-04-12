@@ -8,10 +8,10 @@ minio_mirror: https://dl.minio.io
 minio_activate: True
 
 # https://dl.min.io/server/minio/release/linux-amd64/
-minio_ver: RELEASE.2021-03-17T02-33-02Z
+minio_ver: RELEASE.2021-04-06T23-11-00Z
 
 # https://dl.min.io/client/mc/release/linux-amd64/
-minio_mc_ver: RELEASE.2021-03-12T03-36-59Z
+minio_mc_ver: RELEASE.2021-03-23T05-46-11Z
 
 minio_tls_dir: /etc/minio/certs
 minio_tls:
