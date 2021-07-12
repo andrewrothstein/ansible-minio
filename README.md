@@ -1,6 +1,6 @@
 andrewrothstein.minio
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-minio.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-minio)
+![Build Status](https://github.com/andrewrothstein/ansible-minio/actions/workflows/build.yml/badge.svg)
 
 Installs [minio](https://www.minio.io) to /usr/local/bin by default.
 
