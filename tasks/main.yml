@@ -1,6 +1,6 @@
 ---
 - name: download and install
-  loop: '{{ minio_apps }}'
+  loop: '{{ minio_apps | selectattr("name", "in", minio_components) | list }}'
   loop_control:
     loop_var: minio_app
   include_tasks: install-program.yml
