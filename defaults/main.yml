@@ -1,8 +1,13 @@
 ---
+minio_privilege_escalate: true
+minio_privilege_escalation_user: '{{ (ansible_os_family == "Windows") | ternary("System", "root") }}'
+
 minio_os: linux
 minio_arch: amd64
 minio_install_dir: /usr/local/bin
 minio_mirror: https://dl.minio.io
+
+minio_installer: bin
 minio_components:
   - minio
   - mc

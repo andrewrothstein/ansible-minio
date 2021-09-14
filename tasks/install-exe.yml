@@ -3,16 +3,16 @@
   include_vars:
     file: app-vars.yml
 - name: downloading {{ minio_app_name }} from {{ minio_app_url }} to {{ minio_app_exe }}
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   get_url:
     url: '{{ minio_app_url }}'
     dest: '{{ minio_app_exe }}'
     mode: 0755
     checksum: '{{ minio_app_checksum }}'
 - name: linking {{ minio_app_exe }} to {{ minio_app_link }}...
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   file:
     src: '{{ minio_app_exe }}'
     dest: '{{ minio_app_link }}'
