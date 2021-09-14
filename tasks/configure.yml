@@ -1,20 +1,20 @@
 ---
 - name: create minio group ({{ minio_group }}
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   group:
     name: '{{ minio_group }}'
     state: present
 - name: create minio user ({{ minio_user }})
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   user:
     name: '{{ minio_user }}'
     group: '{{ minio_group }}'
     state: present
 - name: ensure config and volume directories exist
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   with_items:
     - '{{ minio_config_dir }}'
     - '{{ minio_config.volumes }}'
@@ -27,8 +27,8 @@
 - when: minio_tls.enable
   block:
     - name: mkdir -p {{ minio_tls_dir }}
-      become: yes
-      become_user: root
+      become: '{{ minio_privilege_escalate }}'
+      become_user: '{{ minio_privilege_escalation_user }}'
       file:
         path: '{{ minio_tls_dir }}'
         state: directory
@@ -49,8 +49,8 @@
           owner: '{{ minio_user }}'
           grp: '{{ minio_group }}'
 - name: templatize {{ minio_config_file }}...
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   template:
     src: minio.j2
     dest: '{{ minio_config_file }}'
@@ -61,8 +61,8 @@
     - minio_restart
 - include_tasks: '{{ minio_init | default("systemd") }}.yml'
 - name: start minio service
-  become: yes
-  become_user: root
+  become: '{{ minio_privilege_escalate }}'
+  become_user: '{{ minio_privilege_escalation_user }}'
   when: minio_activate
   service:
     name: minio

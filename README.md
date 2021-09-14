@@ -14,6 +14,8 @@ Role Variables
 
 See [defaults/main.yml](defaults/main.yml)
 
+> Note: If minio_installer is toggled between Homebrew (brew) and binary (bin) mode, please make sure the executable is re-linked if you want to leverage the Homebrew version: `brew unlink {{ minio_app }} && brew link {{ minio_app }}`
+
 Dependencies
 ------------
 
