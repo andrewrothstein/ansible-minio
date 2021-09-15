@@ -33,4 +33,4 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.tls
-    version: v0.1.2
+    version: v0.1.4
