@@ -37,7 +37,7 @@
       include_role:
         name: andrewrothstein.tls
       vars:
-        tls_become: yes
+        tls_become: true
         tls_become_user: root
         tls_src: '{{ minio_tls.pki_dir }}'
         tls_dest: '{{ minio_tls_dir }}'
@@ -67,4 +67,4 @@
   service:
     name: minio
     state: started
-    enabled: yes
+    enabled: true

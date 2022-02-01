@@ -1,13 +1,13 @@
 ---
 # handlers file for minio
 - name: minio_daemon_reload
-  become: yes
+  become: true
   become_user: root
   when: minio_activate
   systemd:
-    daemon_reload: yes
+    daemon_reload: true
 - name: minio_restart
-  become: yes
+  become: true
   become_user: root
   when: minio_activate
   service:
