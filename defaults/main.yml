@@ -13,15 +13,15 @@ minio_components:
   - mc
 
 # see test.yml for configuration and launching
-minio_activate: True
+minio_activate: true
 
 # https://dl.min.io/server/minio/release/linux-amd64/
-minio_ver: RELEASE.2021-07-12T02-44-53Z
+minio_ver: RELEASE.2022-01-03T18-22-58Z
 
 # https://dl.min.io/client/mc/release/linux-amd64/
-minio_mc_ver: RELEASE.2021-06-13T17-48-22Z
+minio_mc_ver: RELEASE.2022-01-29T01-03-27Z
 
 minio_tls_dir: /etc/minio/certs
 minio_tls:
-  enable: False
+  enable: false
   # pki_dir: ~/secrets
