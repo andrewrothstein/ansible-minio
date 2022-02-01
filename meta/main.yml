@@ -22,7 +22,8 @@ galaxy_info:
         - 8
     - name: Fedora
       versions:
-        - 34
+        - 35
+        - 36
     - name: Ubuntu
       versions:
         - bionic
@@ -32,5 +33,4 @@ galaxy_info:
     - development
 
 dependencies:
-  - role: andrewrothstein.tls
-    version: v0.1.4
+  - andrewrothstein.tls
