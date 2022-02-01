@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    minio_activate: False
+    minio_activate: false
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
