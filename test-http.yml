@@ -1,9 +1,9 @@
 ---
 - hosts: all
   vars:
-    minio_activate: False
+    minio_activate: false
     minio_config:
-      enable: True
+      enable: true
       server_access_key: minioServerAccessKey
       server_secret_key: minioServerSecretKey
       user: minio-test-user
