@@ -22,7 +22,6 @@ jobs:
       matrix:
         os:
         - archlinux_latest
-        - centos_8
         - debian_bullseye
         - debian_buster
         - fedora_35
@@ -30,6 +29,7 @@ jobs:
         - rockylinux_8
         - ubuntu_bionic
         - ubuntu_focal
+        - ubuntu_jammy
         python-versions:
         - '3.9'
 name: dcb
