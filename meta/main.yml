@@ -30,6 +30,3 @@ galaxy_info:
   role_name: minio
   galaxy_tags:
     - development
-
-dependencies:
-  - andrewrothstein.tls
