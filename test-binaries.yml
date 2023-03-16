@@ -5,6 +5,13 @@
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - name: are executables executable
-      command: '{{ item.name }} --version'
-      with_items: '{{ minio_apps }}'
+    - command: /usr/local/bin/minio --version
+      register: minio_test_output
+    - name: minio --version
+      debug:
+        msg: '{{ minio_test_output.stdout }}'
+    - command: /usr/local/bin/mc --version
+      register: mc_test_output
+    - name: mc --versison
+      debug:
+        msg: '{{ mc_test_output.stdout }}'
