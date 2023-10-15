@@ -15,7 +15,7 @@ jobs:
     - name: task ver
       run: task --version
     - name: download task mono
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: taskmono
         ref: develop
