@@ -1,0 +1,42 @@
+[
+  {
+    "OS": "archlinux",
+    "OS_VER": "latest"
+  },
+  {
+    "OS": "debian",
+    "OS_VER": "bullseye"
+  },
+  {
+    "OS": "debian",
+    "OS_VER": "buster"
+  },
+  {
+    "OS": "fedora",
+    "OS_VER": "36"
+  },
+  {
+    "OS": "fedora",
+    "OS_VER": "37"
+  },
+  {
+    "OS": "rockylinux",
+    "OS_VER": "8"
+  },
+  {
+    "OS": "rockylinux",
+    "OS_VER": "9"
+  },
+  {
+    "OS": "ubuntu",
+    "OS_VER": "bionic"
+  },
+  {
+    "OS": "ubuntu",
+    "OS_VER": "focal"
+  },
+  {
+    "OS": "ubuntu",
+    "OS_VER": "jammy"
+  }
+]
