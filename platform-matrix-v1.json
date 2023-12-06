@@ -5,19 +5,19 @@
   },
   {
     "OS": "debian",
-    "OS_VER": "bullseye"
+    "OS_VER": "bookworm"
   },
   {
     "OS": "debian",
-    "OS_VER": "buster"
+    "OS_VER": "bullseye"
   },
   {
     "OS": "fedora",
-    "OS_VER": "36"
+    "OS_VER": "38"
   },
   {
     "OS": "fedora",
-    "OS_VER": "37"
+    "OS_VER": "39"
   },
   {
     "OS": "rockylinux",
@@ -26,10 +26,6 @@
   {
     "OS": "rockylinux",
     "OS_VER": "9"
-  },
-  {
-    "OS": "ubuntu",
-    "OS_VER": "bionic"
   },
   {
     "OS": "ubuntu",
