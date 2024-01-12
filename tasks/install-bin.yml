@@ -1,19 +1,19 @@
 ---
-- name: resolving vars for {{ minio_app.name }}...
-  include_vars:
+- name: Resolving vars for {{ minio_app.name }}
+  ansible.builtin.include_vars:
     file: app-vars.yml
-- name: downloading {{ minio_app_name }} from {{ minio_app_url }} to {{ minio_app_exe }}
+- name: Downloading {{ minio_app_name }} from {{ minio_app_url }} to {{ minio_app_exe }}
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
-  get_url:
+  ansible.builtin.get_url:
     url: '{{ minio_app_url }}'
     dest: '{{ minio_app_exe }}'
-    mode: 0755
+    mode: '755'
     checksum: '{{ minio_app_checksum }}'
-- name: linking {{ minio_app_exe }} to {{ minio_app_link }}...
+- name: Linking {{ minio_app_exe }} to {{ minio_app_link }}...
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
-  file:
+  ansible.builtin.file:
     src: '{{ minio_app_exe }}'
     dest: '{{ minio_app_link }}'
     state: link

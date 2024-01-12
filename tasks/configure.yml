@@ -1,24 +1,24 @@
 ---
-- name: create minio group ({{ minio_group }}
+- name: Create minio group ({{ minio_group }}
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
-  group:
+  ansible.builtin.group:
     name: '{{ minio_group }}'
     state: present
-- name: create minio user ({{ minio_user }})
+- name: Create minio user ({{ minio_user }})
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
-  user:
+  ansible.builtin.user:
     name: '{{ minio_user }}'
     group: '{{ minio_group }}'
     state: present
-- name: ensure config and volume directories exist
+- name: Ensure config and volume directories exist
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
   with_items:
     - '{{ minio_config_dir }}'
     - '{{ minio_config.volumes }}'
-  file:
+  ansible.builtin.file:
     path: '{{ item }}'
     state: directory
     owner: '{{ minio_user }}'
@@ -26,15 +26,15 @@
     mode: 0755
 - when: minio_tls.enable
   block:
-    - name: mkdir -p {{ minio_tls_dir }}
+    - name: Mkdir -p {{ minio_tls_dir }}
       become: '{{ minio_privilege_escalate }}'
       become_user: '{{ minio_privilege_escalation_user }}'
-      file:
+      ansible.builtin.file:
         path: '{{ minio_tls_dir }}'
         state: directory
-        mode: 0755
+        mode: '755'
     - name: install keys/certs
-      include_role:
+      ansible.builtin.include_role:
         name: andrewrothstein.tls
       vars:
         tls_become: true
@@ -48,23 +48,23 @@
         tls_dest_chown:
           owner: '{{ minio_user }}'
           grp: '{{ minio_group }}'
-- name: templatize {{ minio_config_file }}...
+- name: Templatize {{ minio_config_file }}...
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
-  template:
+  ansible.builtin.template:
     src: minio.j2
     dest: '{{ minio_config_file }}'
     owner: '{{ minio_user }}'
     group: '{{ minio_group }}'
-    mode: 0600
+    mode: '600'
   notify:
     - minio_restart
-- include_tasks: '{{ minio_init | default("systemd") }}.yml'
-- name: start minio service
+- ansible.builtin.include_tasks: '{{ minio_init | default("systemd") }}.yml'
+- name: Start minio service
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
   when: minio_activate
-  service:
+  ansible.builtin.service:
     name: minio
     state: started
     enabled: true

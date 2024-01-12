@@ -1,12 +1,15 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: installs Minio server and/or client
   company: BlueMountain Capital
+  description: installs Minio server and/or client
+  galaxy_tags:
+    - development
   license: MIT
-  min_ansible_version: 2.0
+  min_ansible_version: '2.0'
+  namespace: andrewrothstein
   platforms:
-    - name: Archlinux
+    - name: ArchLinux
       versions:
         - all
     - name: Debian
@@ -15,16 +18,14 @@ galaxy_info:
         - bullseye
     - name: EL
       versions:
-        - 8
-        - 9
+        - '8'
+        - '9'
     - name: Fedora
       versions:
-        - 38
-        - 39
+        - '38'
+        - '39'
     - name: Ubuntu
       versions:
         - focal
         - jammy
   role_name: minio
-  galaxy_tags:
-    - development
