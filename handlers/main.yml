@@ -4,12 +4,12 @@
   become: true
   become_user: root
   when: minio_activate
-  systemd:
+  ansible.builtin.systemd:
     daemon_reload: true
 - name: minio_restart
   become: true
   become_user: root
   when: minio_activate
-  service:
+  ansible.builtin.service:
     name: minio
     state: restarted

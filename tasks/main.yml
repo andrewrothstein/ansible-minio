@@ -1,8 +1,9 @@
 ---
-- name: download and install
+- name: Download and install for {{ minio_installer }}
   loop: '{{ minio_apps | selectattr("name", "in", minio_components) | list }}'
   loop_control:
     loop_var: minio_app
   ansible.builtin.include_tasks: install-{{ minio_installer }}.yml
-- when: minio_config is defined and minio_config.enable
+- name: Configure...
+  when: minio_config is defined and minio_config.enable
   ansible.builtin.include_tasks: configure.yml

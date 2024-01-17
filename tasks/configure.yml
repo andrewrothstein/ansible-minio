@@ -23,8 +23,9 @@
     state: directory
     owner: '{{ minio_user }}'
     group: '{{ minio_group }}'
-    mode: 0755
-- when: minio_tls.enable
+    mode: '755'
+- name: Configuring TLS
+  when: minio_tls.enable
   block:
     - name: Mkdir -p {{ minio_tls_dir }}
       become: '{{ minio_privilege_escalate }}'
@@ -33,7 +34,7 @@
         path: '{{ minio_tls_dir }}'
         state: directory
         mode: '755'
-    - name: install keys/certs
+    - name: Install keys/certs
       ansible.builtin.include_role:
         name: andrewrothstein.tls
       vars:
