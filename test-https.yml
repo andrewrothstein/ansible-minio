@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Test role with TLS enabled minio configuration
+  hosts: all
   vars:
     minio_activate: false
     minio_tls:

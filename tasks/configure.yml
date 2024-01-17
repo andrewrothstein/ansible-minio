@@ -58,9 +58,9 @@
     owner: '{{ minio_user }}'
     group: '{{ minio_group }}'
     mode: '600'
-  notify:
-    - minio_restart
-- ansible.builtin.include_tasks: '{{ minio_init | default("systemd") }}.yml'
+  notify: Minio Daemon Restart
+- name: Configure minio daemon for {{ minio_init | default("systemd") }}
+  ansible.builtin.include_tasks: '{{ minio_init | default("systemd") }}.yml'
 - name: Start minio service
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'

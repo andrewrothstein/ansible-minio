@@ -1,12 +1,12 @@
 ---
 # handlers file for minio
-- name: minio_daemon_reload
+- name: Minio Daemon Reload
   become: true
   become_user: root
   when: minio_activate
   ansible.builtin.systemd:
     daemon_reload: true
-- name: minio_restart
+- name: Minio Daemon Restart
   become: true
   become_user: root
   when: minio_activate

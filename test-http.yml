@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Test role with simple minio configuration
+  hosts: all
   vars:
     minio_activate: false
     minio_config:
