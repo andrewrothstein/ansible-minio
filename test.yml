@@ -1,4 +1,7 @@
 ---
-- import_playbook: test-binaries.yml
-- import_playbook: test-http.yml
-- import_playbook: test-https.yml
+- name: Testing binaries
+  import_playbook: test-binaries.yml
+- name: Testing http
+  import_playbook: test-http.yml
+- name: Testing https
+  import_playbook: test-https.yml

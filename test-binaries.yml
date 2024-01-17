@@ -1,17 +1,23 @@
 ---
-- hosts: all
+- name: Testing install for minio and mc
+  hosts: all
   vars:
     minio_activate: false
-  roles:
-    - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/bin/minio --version
+    - name: Install andrewrothstein.minio
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'minio --version'
+      ansible.builtin.command: /usr/local/bin/minio --version
+      changed_when: false
       register: minio_test_output
-    - name: minio --version
-      debug:
+    - name: Output of 'minio --version'
+      ansible.builtin.debug:
         msg: '{{ minio_test_output.stdout }}'
-    - command: /usr/local/bin/mc --version
+    - name: Executing 'mc --version'
+      ansible.builtin.command: /usr/local/bin/mc --version
+      changed_when: false
       register: mc_test_output
-    - name: mc --versison
-      debug:
+    - name: Output of 'mc --version'
+      ansible.builtin.debug:
         msg: '{{ mc_test_output.stdout }}'
