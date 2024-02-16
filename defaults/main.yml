@@ -16,10 +16,10 @@ minio_components:
 minio_activate: true
 
 # https://dl.min.io/server/minio/release/linux-amd64/
-minio_ver: RELEASE.2024-01-16T16-07-38Z
+minio_ver: RELEASE.2024-02-14T21-36-02Z
 
 # https://dl.min.io/client/mc/release/linux-amd64/
-minio_mc_ver: RELEASE.2024-01-16T16-06-34Z
+minio_mc_ver: RELEASE.2024-02-14T21-19-52Z
 
 minio_tls_dir: /etc/minio/certs
 minio_tls:
