@@ -3,6 +3,6 @@
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
   loop: '{{ minio_components }}'
-  ansible.builtin.homebrew:
+  community.general.homebrew:
     name: minio/stable/{{ item }}
     state: present
