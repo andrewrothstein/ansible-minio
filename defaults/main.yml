@@ -1,11 +1,11 @@
 ---
 minio_privilege_escalate: true
-minio_privilege_escalation_user: '{{ (ansible_os_family == "Windows") | ternary("System", "root") }}'
+minio_privilege_escalation_user: '{{ (ansible_facts["os_family"] == "Windows") | ternary("System", "root") }}'
 
 minio_os: linux
 minio_arch: amd64
 minio_install_dir: /usr/local/bin
-minio_mirror: https://dl.minio.io
+minio_mirror: https://dl.min.io
 
 minio_installer: bin
 minio_components:
@@ -15,11 +15,12 @@ minio_components:
 # see test.yml for configuration and launching
 minio_activate: true
 
-# https://dl.min.io/server/minio/release/linux-amd64/
-minio_ver: RELEASE.2024-12-18T13-15-44Z
+# https://dl.min.io/community/server/minio/release/linux-amd64/archive/minio.RELEASE.2025-09-07T16-13-09Z
+# https://dl.min.io/community/server/minio/release/linux-amd64/archive/minio.RELEASE.2025-09-07T16-13-09Z.sha256sum
+minio_ver: RELEASE.2025-09-07T16-13-09Z
 
-# https://dl.min.io/client/mc/release/linux-amd64/
-minio_mc_ver: RELEASE.2024-11-21T17-21-54Z
+# https://dl.min.io/community/client/mc/release/linux-amd64/
+minio_mc_ver: RELEASE.2025-08-13T08-35-41Z
 
 minio_tls_dir: /etc/minio/certs
 minio_tls:

@@ -9,8 +9,8 @@ minio_group: '{{ minio_config.group if "user" in minio_config else "minio-group"
 
 minio_apps:
   - ver: '{{ minio_ver }}'
-    subpath: server
+    subpath: community/server
     name: minio
   - ver: '{{ minio_mc_ver }}'
-    subpath: client
+    subpath: community/client
     name: mc

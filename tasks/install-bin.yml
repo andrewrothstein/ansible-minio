@@ -2,6 +2,11 @@
 - name: Resolving vars for {{ minio_app.name }}
   ansible.builtin.include_vars:
     file: app-vars.yml
+- name: Fetching checksum for {{ minio_app_name }}
+  ansible.builtin.uri:
+    url: '{{ minio_app_checksum_url }}'
+    return_content: true
+  register: minio_app_checksum_result
 - name: Downloading {{ minio_app_name }} from {{ minio_app_url }} to {{ minio_app_exe }}
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
@@ -9,7 +14,7 @@
     url: '{{ minio_app_url }}'
     dest: '{{ minio_app_exe }}'
     mode: '755'
-    checksum: '{{ minio_app_checksum }}'
+    checksum: 'sha256:{{ minio_app_checksum_result.content.split(" ")[0] }}'
 - name: Linking {{ minio_app_exe }} to {{ minio_app_link }}...
   become: '{{ minio_privilege_escalate }}'
   become_user: '{{ minio_privilege_escalation_user }}'
